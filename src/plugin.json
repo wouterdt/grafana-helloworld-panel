@@ -1,21 +1,21 @@
 {
   "type": "panel",
-  "name": "Clock",
-  "id": "grafana-clock-panel",
+  "name": "Hello World",
+  "id": "grafana-hello-word-panel",
 
   "info": {
-    "description": "Clock panel for grafana",
+    "description": "Hello World panel for grafana",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "Wouterdt",
+      "url": "https://github.com/wouterdt/grafana-helloworld-panel"
     },
-    "keywords": ["clock", "panel"],
+    "keywords": ["helloworld", "panel"],
     "logos": {
       "small": "img/clock_panel_logo.svg",
       "large": "img/clock_panel_logo.svg"
     },
     "links": [
-      {"name": "Project site", "url": "https://github.com/grafana/clock-panel"},
+      {"name": "Project site", "url": "https://github.com/wouterdt/grafana-helloworld-panel"},
       {"name": "MIT License", "url": "https://github.com/grafana/clock-panel/blob/master/LICENSE"}
     ],
     "screenshots": [
