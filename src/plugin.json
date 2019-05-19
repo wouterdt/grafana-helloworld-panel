@@ -1,7 +1,7 @@
 {
   "type": "panel",
   "name": "Hello World",
-  "id": "grafana-hello-word-panel",
+  "id": "hello-world-panel",
 
   "info": {
     "description": "Hello World panel for grafana",

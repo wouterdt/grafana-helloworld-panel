@@ -1,4 +1,4 @@
-define(["app/plugins/sdk"], function(__WEBPACK_EXTERNAL_MODULE_grafana_app_plugins_sdk__) { return /******/ (function(modules) { // webpackBootstrap
+define(["app/plugins/sdk","lodash"], function(__WEBPACK_EXTERNAL_MODULE_grafana_app_plugins_sdk__, __WEBPACK_EXTERNAL_MODULE_lodash__) { return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -103,6 +103,12 @@ exports.HelloWorldCtrl = undefined;
 
 var _sdk = __webpack_require__(/*! grafana/app/plugins/sdk */ "grafana/app/plugins/sdk");
 
+var _lodash = __webpack_require__(/*! lodash */ "lodash");
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var __extends = undefined && undefined.__extends || function () {
   var _extendStatics = function extendStatics(d, b) {
     _extendStatics = Object.setPrototypeOf || {
@@ -139,7 +145,11 @@ function (_super) {
   function HelloWorldCtrl($scope, $injector) {
     var _this = _super.call(this, $scope, $injector) || this;
 
-    _this.test = "Hello World";
+    _this.panelDefaults = {
+      test: "Hello World"
+    };
+
+    _lodash2.default.defaultsDeep(_this.panel, _this.panelDefaults);
 
     _this.events.on('init-edit-mode', _this.onInitEditMode.bind(_this));
 
@@ -158,7 +168,7 @@ function (_super) {
 
   HelloWorldCtrl.prototype.onInitEditMode = function () {
     console.log("edit mode");
-    this.addEditorTab('Options', 'public/plugins/grafana-helloworld-panel/partials/options.html', 2);
+    this.addEditorTab('Options', 'public/plugins/hello-world-panel/partials/options.html', 2);
   };
 
   HelloWorldCtrl.prototype.onPanelTeardown = function () {
@@ -224,6 +234,17 @@ exports.PanelCtrl = _helloworld_ctrl.HelloWorldCtrl;
 /***/ (function(module, exports) {
 
 module.exports = __WEBPACK_EXTERNAL_MODULE_grafana_app_plugins_sdk__;
+
+/***/ }),
+
+/***/ "lodash":
+/*!*************************!*\
+  !*** external "lodash" ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_lodash__;
 
 /***/ })
 

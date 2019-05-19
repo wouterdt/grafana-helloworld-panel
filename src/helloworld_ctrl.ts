@@ -3,13 +3,15 @@ import _ from 'lodash';
 
 export class HelloWorldCtrl extends PanelCtrl {
   static templateUrl = 'partials/module.html';
+  panelDefaults = {
+    test:  "Hello World"
 
+  }
 
-  test: string = "Hello World"
   /** @ngInject */
   constructor($scope, $injector) {
     super($scope, $injector);
-
+    _.defaultsDeep(this.panel, this.panelDefaults);
     this.events.on('init-edit-mode', this.onInitEditMode.bind(this));
     this.events.on('panel-teardown', this.onPanelTeardown.bind(this));
     this.events.on('panel-initialized', this.panelinit.bind(this));
@@ -24,7 +26,7 @@ export class HelloWorldCtrl extends PanelCtrl {
 
   onInitEditMode() {
     console.log("edit mode")
-    this.addEditorTab('Options', 'public/plugins/grafana-helloworld-panel/partials/options.html', 2);
+    this.addEditorTab('Options', 'public/plugins/hello-world-panel/partials/options.html', 2);
 
   }
 
